@@ -16,17 +16,19 @@ body {
     flex-direction: column;  
 }
 #starts h1, #over h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 .box {
     background-color: white;
-    padding: 50px 50px;
+    padding: 20px 20px;
     text-align: center;
     border-radius: 15px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; 
 }
-
+.box button {
+    font-size: 15px;
+}
 #point-container {
     border-radius: 15px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;

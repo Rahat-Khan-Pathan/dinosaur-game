@@ -16,6 +16,7 @@ const finish = ()=> {
     gameOver();
 }
 const start = ()=> {
+    document.getElementById('time').innerText=3;
     document.getElementById('over').style.display="none";
     document.getElementById('starts').style.display="flex";
     let i = 2;
@@ -24,16 +25,15 @@ const start = ()=> {
         i--;
         if(i<0) {
             gameStart();
-            document.getElementById('starts').style.display="none";
             clearInterval(time);
         }
     }, 1000);
 }
 start();
 const gameStart = ()=> {
-    document.getElementById('time').innerText=3;
-    document.getElementById('block').classList.add('block');
+    document.getElementById('starts').style.display="none";
     document.getElementById('block2').classList.add('block2');
+    document.getElementById('block').classList.add('block');
     document.getElementById('point').innerText=0;
     check=true;
     update();
