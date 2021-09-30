@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Dinosaur Game</title>
+</head>
+<body>
+    <div>
+        <div id="point-container">
+            <h1>Points: <span id="point">0</span> </h1>
+        </div>
+        <div id="game">
+            <div id="starts">
+                <div class="box">
+                    <h1>Starts in</h1>
+                    <h1 id="time">3</h1>
+                </div>
+            </div>
+            <div id="over">
+                <div class="box">
+                    <h1>Game Over</h1>
+                    <button class="btn btn-success" onclick=start()>Restart</button>
+                </div>
+            </div>
+            <div id="dinosaur">
+                <img src="/dinosaur.png" alt="">
+            </div>
+            <div id="block">
+                <img src="/block.png" alt="">
+            </div>
+            <div id="block2">
+                <img src="/block2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
