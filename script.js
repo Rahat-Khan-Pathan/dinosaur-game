@@ -5,21 +5,30 @@ const setDisplay = (id,dis)=> {
 const setText = (id,text)=> {
     document.getElementById(id).innerText = text;
 }
+const getText = id=> {
+    return parseInt(document.getElementById(id).innerText);
+}
 const addClass = (id,cls)=> {
     document.getElementById(id).classList.add(cls);
 }
 const removeClass = (id,cls)=> {
     document.getElementById(id).classList.remove(cls);
 }
+const updateHighest = ()=> {
+    const points = getText('point');
+    const highest = getText('highest');
+    setText('highest',Math.max(points,highest));
+    setText('point',0);
+}
 const jump = () => {
     addClass('dinosaur','jump');
   setTimeout(() => {
       removeClass('dinosaur','jump');
-  }, 500);
+  }, 700);
 };
 const pointsUp = ()=> {
-    const val = parseInt(document.getElementById("point").innerText);
-    document.getElementById("point").innerText = val + 1;
+    const val = getText('point');
+    setText('point',val+1);
 }
 const finish = ()=> {
     removeClass('block','block');
@@ -32,6 +41,7 @@ const firstClick = () => {
 }
 const start = ()=> {
     firstClick();
+    updateHighest();
     setText('time',3);
     setDisplay('over','none');
     setDisplay('starts','flex');
@@ -50,7 +60,6 @@ const gameStart = ()=> {
     setTimeout(() => {
         addClass('block','block');
         addClass('block2','block2');
-        setText('point',0);
         check=true;
         update();
     }, 1000);
@@ -76,9 +85,9 @@ let checkDead = setInterval(() => {
   let block2Left = parseInt(
     window.getComputedStyle(block2).getPropertyValue("left")
   );
-  if (blockLeft >= 0 && blockLeft < 55 && dinosaurTop >= 240) {
+  if (blockLeft >= 0 && blockLeft < 55 && dinosaurTop >= 225) {
     finish();
-  } else if (block2Left >= 0 && block2Left < 55 && dinosaurTop >= 240) {
+  } else if (block2Left >= 0 && block2Left < 55 && dinosaurTop >= 225) {
     finish();
   } 
 }, 10);
