@@ -8,18 +8,23 @@ body {
     justify-content: center;
     align-items: center;
 }
-#starts, #over {
+#starts, #over, #firstClick {
     min-height: 100%;
     margin: 0 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;  
+}
+#starts, #over {
+    display: none;
 }
 #starts h1, #over h1 {
     font-size: 25px;
     margin-bottom: 10px;
 }
 .box {
+    width: 200px;
     background-color: white;
     padding: 20px 20px;
     text-align: center;

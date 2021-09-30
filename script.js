@@ -1,8 +1,20 @@
 let check = true;
+const setDisplay = (id,dis)=> {
+    document.getElementById(id).style.display=dis;
+}
+const setText = (id,text)=> {
+    document.getElementById(id).innerText = text;
+}
+const addClass = (id,cls)=> {
+    document.getElementById(id).classList.add(cls);
+}
+const removeClass = (id,cls)=> {
+    document.getElementById(id).classList.remove(cls);
+}
 const jump = () => {
-  document.getElementById("dinosaur").classList.add("jump");
+    addClass('dinosaur','jump');
   setTimeout(() => {
-    document.getElementById("dinosaur").classList.remove("jump");
+      removeClass('dinosaur','jump');
   }, 500);
 };
 const pointsUp = ()=> {
@@ -10,18 +22,22 @@ const pointsUp = ()=> {
     document.getElementById("point").innerText = val + 1;
 }
 const finish = ()=> {
-    document.getElementById('block').classList.remove('block');
-    document.getElementById('block2').classList.remove('block2');
+    removeClass('block','block');
+    removeClass('block2','block2');
     check=false;
     gameOver();
 }
+const firstClick = () => {
+    setDisplay('firstClick','none');
+}
 const start = ()=> {
-    document.getElementById('time').innerText=3;
-    document.getElementById('over').style.display="none";
-    document.getElementById('starts').style.display="flex";
+    firstClick();
+    setText('time',3);
+    setDisplay('over','none');
+    setDisplay('starts','flex');
     let i = 2;
     const time = setInterval(() => {
-        document.getElementById('time').innerText=i;
+        setText('time',i);
         i--;
         if(i<0) {
             gameStart();
@@ -29,17 +45,16 @@ const start = ()=> {
         }
     }, 1000);
 }
-start();
 const gameStart = ()=> {
-    document.getElementById('starts').style.display="none";
-    document.getElementById('block2').classList.add('block2');
-    document.getElementById('block').classList.add('block');
-    document.getElementById('point').innerText=0;
+    setDisplay('starts','none');
+    addClass('block','block');
+    addClass('block2','block2');
+    setText('point',0);
     check=true;
     update();
 }
 const gameOver = ()=> {
-    document.getElementById('over').style.display="flex";
+    setDisplay('over','flex');
 }
 document.addEventListener("touchstart", function () {
     jump();
