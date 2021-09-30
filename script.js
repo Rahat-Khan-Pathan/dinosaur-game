@@ -39,19 +39,21 @@ const start = ()=> {
     const time = setInterval(() => {
         setText('time',i);
         i--;
-        if(i<0) {
-            gameStart();
+        if(i<-1) {
             clearInterval(time);
+            gameStart();
         }
     }, 1000);
 }
 const gameStart = ()=> {
     setDisplay('starts','none');
-    addClass('block','block');
-    addClass('block2','block2');
-    setText('point',0);
-    check=true;
-    update();
+    setTimeout(() => {
+        addClass('block','block');
+        addClass('block2','block2');
+        setText('point',0);
+        check=true;
+        update();
+    }, 1000);
 }
 const gameOver = ()=> {
     setDisplay('over','flex');

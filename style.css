@@ -89,14 +89,14 @@ body {
     height: 30px;
     position: relative;
     top: 240px;
-    left: 250px;
+    left: 500px;
 }
 #block2 {
     width: 40px;
     height: 30px;
     position: relative;
     top: 210px;
-    left: 250px;
+    left: 1000px;
 }
 .block {
     animation: block1 2000ms infinite linear;
